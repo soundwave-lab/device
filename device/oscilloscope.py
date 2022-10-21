@@ -43,3 +43,6 @@ class Oscilloscope:
     def get_pk2pk(self, channel):
         [times, volts] = self._scope.fetch(channel)
         return max(volts)-min(volts)
+
+    def sample(self):
+        return self._scope.write('ACQ:MOD SAM')
